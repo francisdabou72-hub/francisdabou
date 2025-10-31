@@ -1,2 +1,0 @@
-# francisdabou
-Developer Frontend Portfolio

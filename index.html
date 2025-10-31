@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francis Dabou - Frontend Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --text: #333;
+            --whatsapp: #25D366;
+            --twitter: #1DA1F2;
+            --github: #333;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), #1a2530);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            background-color: #ddd;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .intro h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .intro p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+            text-align: justify;
+            text-align-last: center;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 10px;
+            background-color: var(--light);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .skill-item h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+        }
+
+        .learning {
+            background-color: var(--light);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            border-left: 5px solid var(--accent);
+        }
+
+        .learning h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.6rem;
+        }
+
+        .learning p {
+            text-align: justify;
+            text-align-last: center;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact .section-title::after {
+            background-color: var(--accent);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            padding: 12px 25px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .whatsapp-link {
+            background-color: var(--whatsapp);
+        }
+
+        .contact-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-link:hover {
+            background-color: #128C7E;
+        }
+
+        .contact-icon {
+            font-size: 1.6rem;
+        }
+
+        /* Social Media Tree */
+        .social-tree {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .linkedin {
+            background-color: #0077B5;
+        }
+
+        .twitter {
+            background-color: var(--twitter);
+        }
+
+        .github {
+            background-color: var(--github);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 1rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .intro h1 {
+                font-size: 2.2rem;
+            }
+
+            .intro p {
+                font-size: 1.1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+
+            .social-tree {
+                gap: 15px;
+            }
+
+            .social-link {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-pic">
+                    <img src="myspace.png" alt="Francis Dabou">
+                </div>
+                <div class="intro">
+                    <h1>Welcome!</h1>
+                    <p>I'm a Frontend Developer who creates clean, responsive, and engaging web interfaces. I love
+                        turning ideas into beautiful and functional digital experiences.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <h2 class="section-title">SKILLS</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3>HTML</h3>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3>CSS</h3>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI</h3>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                </div>
+            </div>
+            <div class="learning">
+                <h3>learning...</h3>
+                <p>Continuously expanding my skills and exploring new technologies to create even better web
+                    experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Contacts</h2>
+            <div class="contact-links">
+                <a href="https://22383348096" class="contact-link whatsapp-link">
+                    <i class="fab fa-whatsapp contact-icon"></i>
+                    <span>WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Social Media Tree -->
+            <div class="social-tree">
+                <a href="https://linkedin.com/in/francis-dabou" class="social-link linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://x.com/DabouFranc12525" class="social-link twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://github.com/francisdabou72-hub" class="social-link github">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; francisdabou.com. All right reserved. 2025</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
