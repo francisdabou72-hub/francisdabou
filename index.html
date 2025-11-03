@@ -654,7 +654,10 @@
 
         .social-links {
             display: flex;
-            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
         }
 
         .social-link {
@@ -669,6 +672,7 @@
         }
 
         .social-link:hover {
+
             background: var(--electric-violet);
             transform: translateY(-3px);
         }
@@ -775,7 +779,7 @@
             }
 
             .footer-content {
-                flex-direction: column;
+                flex-direction: "bloc";
                 gap: 2rem;
             }
 
@@ -807,7 +811,7 @@
     <header id="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">Francis<span>.</span></a>
+                <a href="#" class="logo"><span></span></a>
 
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
@@ -871,8 +875,7 @@
                     <a href="#contact" class="btn btn-primary" data-i18n="about.contact">Get In Touch</a>
                 </div>
                 <div class="about-image fade-in">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80"
-                        alt="About Me">
+                    <img src="https://i.pinimg.com/736x/98/b7/4b/98b74bd92cfaedb1a06fb51d87271e6b.jpg" alt="About Me">
                 </div>
             </div>
         </div>
@@ -929,8 +932,7 @@
             <div class="projects-container">
                 <div class="project-card fade-in">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                            alt="XOM Education Project">
+                        <img src="xom.png" alt="XOM Education Project">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title" data-i18n="projects.xom.title">XOM Education</h3>
@@ -945,15 +947,14 @@
                         <div class="project-links">
                             <a href="https://francisdabou72-hub.github.io/xomeducationenglish/" class="btn btn-primary"
                                 data-i18n="projects.liveDemo">Live Demo</a>
-                            <a href="#" class="btn btn-secondary" data-i18n="projects.code">Code</a>
+
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card fade-in">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
-                            alt="E-commerce Platform">
+                        <img src="clar.png" alt="E-commerce Platform">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title" data-i18n="projects.ecommerce.title">E-commerce Platform</h3>
@@ -961,21 +962,17 @@
                             e-commerce website with product filtering, cart functionality, and secure checkout.</p>
                         <div class="project-tech">
                             <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag" data-i18n="projects.api">API Integration</span>
-                            <span class="tech-tag" data-i18n="projects.payment">Payment Gateway</span>
-                            <span class="tech-tag">UI/UX</span>
+                            <span class="tech-tag" data-i18n="projects.api">HTML & CSS</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
-                            <a href="#" class="btn btn-secondary" data-i18n="projects.code">Code</a>
+                            <a href="https://francisdabou72-hub.github.io/claralinke-commercemoderne/"
+                                class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card fade-in">
                     <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
-                            alt="Analytics Dashboard">
+                        <img src="metri.png" alt="Analytics Dashboard">
                     </div>
                     <div class="project-content">
                         <h3 class="project-title" data-i18n="projects.analytics.title">Analytics Dashboard</h3>
@@ -983,13 +980,10 @@
                             dashboard for data visualization with real-time updates and customizable widgets.</p>
                         <div class="project-tech">
                             <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">Charts.js</span>
-                            <span class="tech-tag">API</span>
                             <span class="tech-tag" data-i18n="projects.dataViz">Data Visualization</span>
                         </div>
                         <div class="project-links">
                             <a href="#" class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
-                            <a href="#" class="btn btn-secondary" data-i18n="projects.code">Code</a>
                         </div>
                     </div>
                 </div>
@@ -1008,9 +1002,9 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h3 class="contact-title" data-i18n="contact.email">Email</h3>
-                        <p class="contact-detail">contact@francis-dabou.com</p>
-                        <a href="mailto:contact@francis-dabou.com" class="btn btn-primary"
-                            data-i18n="contact.sendEmail">Send Email</a>
+                        <p class="contact-detail">email</p>
+                        <a href="francisdabou72@gmail.com" class="btn btn-primary" data-i18n="contact.sendEmail">Send
+                            Email</a>
                     </div>
 
                     <div class="contact-card fade-in">
@@ -1018,8 +1012,8 @@
                             <i class="fab fa-whatsapp"></i>
                         </div>
                         <h3 class="contact-title" data-i18n="contact.whatsapp">WhatsApp</h3>
-                        <p class="contact-detail">+1 (555) 123-4567</p>
-                        <a href="https://wa.me/15551234567" class="btn btn-primary" target="_blank"
+                        <p class="contact-detail">+223 80348096</p>
+                        <a href="https://wa.me/22383344096" class="btn btn-primary" target="_blank"
                             data-i18n="contact.message">Message Me</a>
                     </div>
                 </div>
@@ -1054,16 +1048,14 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="logo">Francis<span>.</span></div>
-
                 <div class="social-links">
-                    <a href="#" class="social-link">
-                        <i class="fab fa-x-twitter"></i>
+                    <a href="https://www.x.com/DabouFranc12525" class="social-link">
+                        <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="#" class="social-link">
+                    <a href="https://www.linkedin.com/in/francis-dabou/" class="social-link">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="#" class="social-link">
+                    <a href="https://francisdabou72-hub.github.io/francisdabou/" class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
