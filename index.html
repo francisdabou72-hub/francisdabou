@@ -557,6 +557,94 @@
             gap: 1rem;
         }
 
+        /* Services Section */
+        .services {
+            background: linear-gradient(135deg, var(--deep-violet) 0%, var(--midnight-blue) 100%);
+        }
+
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: rgba(43, 26, 90, 0.6);
+            border-radius: var(--border-radius);
+            padding: 2.5rem 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(108, 31, 209, 0.3);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--electric-violet);
+        }
+
+        .service-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: var(--electric-violet);
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--soft-magenta);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--light);
+        }
+
+        .service-subtitle {
+            font-size: 1.1rem;
+            color: var(--soft-magenta);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .service-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--light);
+        }
+
+        .service-features {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .service-feature {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--gray);
+        }
+
+        .service-feature:last-child {
+            border-bottom: none;
+        }
+
+        .service-feature i {
+            color: var(--soft-magenta);
+            margin-right: 10px;
+        }
+
         /* Contact Section */
         .contact {
             background: linear-gradient(135deg, var(--deep-violet) 0%, var(--midnight-blue) 100%);
@@ -774,12 +862,13 @@
                 font-size: 1.8rem;
             }
 
-            .projects-container {
+            .projects-container,
+            .services-container {
                 grid-template-columns: 1fr;
             }
 
             .footer-content {
-                flex-direction: "bloc";
+                flex-direction: column;
                 gap: 2rem;
             }
 
@@ -818,6 +907,7 @@
                     <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
                     <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
                     <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+                    <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
                     <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
                 </ul>
 
@@ -958,11 +1048,16 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title" data-i18n="projects.ecommerce.title">E-commerce Platform</h3>
-                        <p class="project-description" data-i18n="projects.ecommerce.description">A fully responsive
-                            e-commerce website with product filtering, cart functionality, and secure checkout.</p>
+                        <p class="project-description">E-Commerce Platform Frontend.
+                            A responsive e-commerce platform showcasing
+                            my frontend skills. Features include dynamic
+                            product listings, intuitive navigation,
+                            and a modern UI/UX design. Built with HTML, CSS and JavaScript,
+                            this project highlights my ability
+                            to create engaging and user-friendly interfaces.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag" data-i18n="projects.api">HTML & CSS</span>
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS & JavaScript</span>
                         </div>
                         <div class="project-links">
                             <a href="https://francisdabou72-hub.github.io/claralinke-commercemoderne/"
@@ -976,16 +1071,125 @@
                     </div>
                     <div class="project-content">
                         <h3 class="project-title" data-i18n="projects.analytics.title">Analytics Dashboard</h3>
-                        <p class="project-description" data-i18n="projects.analytics.description">An interactive
-                            dashboard for data visualization with real-time updates and customizable widgets.</p>
+                        <p class="project-description">
+                            Analytics Dashboard
+                            A comprehensive analytics
+                            dashboard designed to provide insights
+                            into user behavior and platform performance.
+                            Built with HTML, CSS and JavaScript,
+                            it features interactive data visualizations and real-time updates,
+                            demonstrating my ability to create data-driven interfaces.
+                            .</p>
                         <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag"> HTMl CSS & JavaScript</span>
                             <span class="tech-tag" data-i18n="projects.dataViz">Data Visualization</span>
                         </div>
                         <div class="project-links">
-                            <a href="#" class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
+                            <a href="https://francisdabou72-hub.github.io/Metricinsight-/" class="btn btn-primary"
+                                data-i18n="projects.liveDemo">Live Demo</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+        <div class="container">
+            <h2 class="section-title fade-in" data-i18n="services.title">Web Development Services</h2>
+            <div class="services-container">
+                <div class="service-card fade-in">
+                    <div class="service-badge" data-i18n="services.basic.badge">Starter</div>
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.basic.title">Basic</h3>
+                    <p class="service-subtitle" data-i18n="services.basic.subtitle">Landing page, contact form,
+                        responsive design</p>
+                    <div class="service-price">$199</div>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="services.basic.feature1">Single Landing Page</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="services.basic.feature2">Contact Form Integration</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="services.basic.feature3">Fully Responsive Design</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="services.basic.feature4">Mobile-Optimized</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/22383348096?text=Hello! I'm interested in the Basic web development package."
+                        class="btn btn-primary" data-i18n="Get in Touch">Get in Touch</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-badge" data-i18n="services.standard.badge">Business</div>
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.standard.title">Standard</h3>
+                    <p class="service-subtitle" data-i18n="services.standard.subtitle">Up to 5 pages, SEO setup,
+                        analytics, 1-month support</p>
+                    <div class="service-price">$499</div>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="services.standard.feature1">Up to 5 Pages Website</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="services.standard.feature2">SEO Setup & Optimization</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="services.standard.feature3">Google Analytics Integration</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="services.standard.feature4">1 Month Technical Support</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/22383348096?text=Hello! I'm interested in the Standard web development package."
+                        class="btn btn-primary" data-i18n="Get in Touch">Get in Touch</a>
+                </div>
+
+                <div class="service-card fade-in">
+                    <div class="service-badge" data-i18n="services.premium.badge">Pro</div>
+                    <div class="service-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="service-title" data-i18n="services.premium.title">Premium</h3>
+                    <p class="service-subtitle" data-i18n="services.premium.subtitle">Unlimited pages, e-commerce, full
+                        branding, 3-month support</p>
+                    <div class="service-price">$999</div>
+                    <div class="service-features">
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="services.premium.feature1">Unlimited Pages Website</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="services.premium.feature2">E-commerce Functionality</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="services.premium.feature3">Complete Branding Package</span>
+                        </div>
+                        <div class="service-feature">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="services.premium.feature4">3 Months Technical Support</span>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/22383348096?text=Hello! I'm interested in the Premium web development package."
+                        class="btn btn-primary" data-i18n="Get in Touch">Get in Touch</a>
                 </div>
             </div>
         </div>
@@ -1076,6 +1280,7 @@
                 "nav.about": "About",
                 "nav.skills": "Skills",
                 "nav.projects": "Projects",
+                "nav.services": "Services",
                 "nav.contact": "Contact",
 
                 // Hero section
@@ -1116,6 +1321,31 @@
                 "projects.liveDemo": "Live Demo",
                 "projects.code": "Code",
 
+                // Services section
+                "services.title": "Web Development Services",
+                "services.button": "Get in Contact",
+                "services.basic.badge": "Starter",
+                "services.basic.title": "Basic",
+                "services.basic.subtitle": "Landing page, contact form, responsive design",
+                "services.basic.feature1": "Single Landing Page",
+                "services.basic.feature2": "Contact Form Integration",
+                "services.basic.feature3": "Fully Responsive Design",
+                "services.basic.feature4": "Mobile-Optimized",
+                "services.standard.badge": "Business",
+                "services.standard.title": "Standard",
+                "services.standard.subtitle": "Up to 5 pages, SEO setup, analytics, 1-month support",
+                "services.standard.feature1": "Up to 5 Pages Website",
+                "services.standard.feature2": "SEO Setup & Optimization",
+                "services.standard.feature3": "Google Analytics Integration",
+                "services.standard.feature4": "1 Month Technical Support",
+                "services.premium.badge": "Pro",
+                "services.premium.title": "Premium",
+                "services.premium.subtitle": "Unlimited pages, e-commerce, full branding, 3-month support",
+                "services.premium.feature1": "Unlimited Pages Website",
+                "services.premium.feature2": "E-commerce Functionality",
+                "services.premium.feature3": "Complete Branding Package",
+                "services.premium.feature4": "3 Months Technical Support",
+
                 // Contact section
                 "contact.title": "Get In Touch",
                 "contact.email": "Email",
@@ -1134,6 +1364,7 @@
                 "nav.about": "À propos",
                 "nav.skills": "Compétences",
                 "nav.projects": "Projets",
+                "nav.services": "Services",
                 "nav.contact": "Contact",
 
                 // Hero section
@@ -1174,6 +1405,31 @@
                 "projects.liveDemo": "Démo en direct",
                 "projects.code": "Code",
 
+                // Services section
+                "services.title": "Services de Développement Web",
+                "services.button": "Entrer en contact",
+                "services.basic.badge": "Débutant",
+                "services.basic.title": "Basique",
+                "services.basic.subtitle": "Page de destination, formulaire de contact, design responsive",
+                "services.basic.feature1": "Page de Destination Unique",
+                "services.basic.feature2": "Intégration de Formulaire de Contact",
+                "services.basic.feature3": "Design Entièrement Responsive",
+                "services.basic.feature4": "Optimisé pour Mobile",
+                "services.standard.badge": "Entreprise",
+                "services.standard.title": "Standard",
+                "services.standard.subtitle": "Jusqu'à 5 pages, configuration SEO, analytics, 1 mois de support",
+                "services.standard.feature1": "Site Web Jusqu'à 5 Pages",
+                "services.standard.feature2": "Configuration et Optimisation SEO",
+                "services.standard.feature3": "Intégration Google Analytics",
+                "services.standard.feature4": "1 Mois de Support Technique",
+                "services.premium.badge": "Pro",
+                "services.premium.title": "Premium",
+                "services.premium.subtitle": "Pages illimitées, e-commerce, branding complet, 3 mois de support",
+                "services.premium.feature1": "Site Web à Pages Illimitées",
+                "services.premium.feature2": "Fonctionnalités E-commerce",
+                "services.premium.feature3": "Package de Branding Complet",
+                "services.premium.feature4": "3 Mois de Support Technique",
+
                 // Contact section
                 "contact.title": "Entrer en contact",
                 "contact.email": "Email",
@@ -1192,6 +1448,7 @@
                 "nav.about": "Acerca de",
                 "nav.skills": "Habilidades",
                 "nav.projects": "Proyectos",
+                "nav.services": "Servicios",
                 "nav.contact": "Contacto",
 
                 // Hero section
@@ -1232,6 +1489,31 @@
                 "projects.liveDemo": "Demo en vivo",
                 "projects.code": "Código",
 
+                // Services section
+                "services.title": "Servicios de Desarrollo Web",
+                "services.button": "Ponerse en contacto",
+                "services.basic.badge": "Inicial",
+                "services.basic.title": "Básico",
+                "services.basic.subtitle": "Página de destino, formulario de contacto, diseño responsive",
+                "services.basic.feature1": "Página de Destino Única",
+                "services.basic.feature2": "Integración de Formulario de Contacto",
+                "services.basic.feature3": "Diseño Completamente Responsive",
+                "services.basic.feature4": "Optimizado para Móvil",
+                "services.standard.badge": "Empresa",
+                "services.standard.title": "Estándar",
+                "services.standard.subtitle": "Hasta 5 páginas, configuración SEO, analytics, 1 mes de soporte",
+                "services.standard.feature1": "Sitio Web de Hasta 5 Páginas",
+                "services.standard.feature2": "Configuración y Optimización SEO",
+                "services.standard.feature3": "Integración Google Analytics",
+                "services.standard.feature4": "1 Mes de Soporte Técnico",
+                "services.premium.badge": "Pro",
+                "services.premium.title": "Premium",
+                "services.premium.subtitle": "Páginas ilimitadas, e-commerce, branding completo, 3 meses de soporte",
+                "services.premium.feature1": "Sitio Web de Páginas Ilimitadas",
+                "services.premium.feature2": "Funcionalidad E-commerce",
+                "services.premium.feature3": "Paquete de Branding Completo",
+                "services.premium.feature4": "3 Meses de Soporte Técnico",
+
                 // Contact section
                 "contact.title": "Ponerse en contacto",
                 "contact.email": "Email",
@@ -1250,6 +1532,7 @@
                 "nav.about": "Über mich",
                 "nav.skills": "Fähigkeiten",
                 "nav.projects": "Projekte",
+                "nav.services": "Dienstleistungen",
                 "nav.contact": "Kontakt",
 
                 // Hero section
@@ -1289,6 +1572,31 @@
                 "projects.dataViz": "Datenvisualisierung",
                 "projects.liveDemo": "Live-Demo",
                 "projects.code": "Code",
+
+                // Services section
+                "services.title": "Webentwicklungsdienstleistungen",
+                "services.button": "Kontakt aufnehmen",
+                "services.basic.badge": "Starter",
+                "services.basic.title": "Basic",
+                "services.basic.subtitle": "Landingpage, Kontaktformular, responsives Design",
+                "services.basic.feature1": "Einzelne Landingpage",
+                "services.basic.feature2": "Kontaktformular-Integration",
+                "services.basic.feature3": "Vollständig responsives Design",
+                "services.basic.feature4": "Mobil optimiert",
+                "services.standard.badge": "Business",
+                "services.standard.title": "Standard",
+                "services.standard.subtitle": "Bis zu 5 Seiten, SEO-Einrichtung, Analytics, 1 Monat Support",
+                "services.standard.feature1": "Website mit bis zu 5 Seiten",
+                "services.standard.feature2": "SEO-Einrichtung & Optimierung",
+                "services.standard.feature3": "Google Analytics Integration",
+                "services.standard.feature4": "1 Monat technischer Support",
+                "services.premium.badge": "Pro",
+                "services.premium.title": "Premium",
+                "services.premium.subtitle": "Unbegrenzte Seiten, E-Commerce, vollständiges Branding, 3 Monate Support",
+                "services.premium.feature1": "Website mit unbegrenzten Seiten",
+                "services.premium.feature2": "E-Commerce-Funktionalität",
+                "services.premium.feature3": "Vollständiges Branding-Paket",
+                "services.premium.feature4": "3 Monate technischer Support",
 
                 // Contact section
                 "contact.title": "Kontakt aufnehmen",
