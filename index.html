@@ -2,26 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PMN7FT0VSB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PMN7FT0VSB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-PMN7FT0VSB');
-</script>>
-
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-PMN7FT0VSB');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Francis Dabou |Web Developer </title>
-    <meta name="description"content="Sites web professionnels conçus pour 
-    vendre et inspirer confiance. Développeur web premium,
-     solutions modernes et résultats mesurables. Contactez-nous.
-     ">
-    <link rel="stylesheet" 
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="calonical" href="https://www.francisdabou"/>
+    <title>Francis Dabou | Software Engineer</title>
+    <meta name="description" content="Software Engineer building digital solutions for businesses, startups, and entrepreneurs. Modern websites, web applications, and digital platforms.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="canonical" href="https://www.francisdabou.com" />
     <style>
         /* CSS Variables with New Color Palette */
         :root {
@@ -319,11 +314,9 @@
             0% {
                 transform: translateY(0px);
             }
-
             50% {
                 transform: translateY(-15px);
             }
-
             100% {
                 transform: translateY(0px);
             }
@@ -346,7 +339,7 @@
         .hero-subtitle {
             font-size: 1.5rem;
             color: var(--gray);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .hero-description {
@@ -401,7 +394,7 @@
 
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
@@ -428,44 +421,58 @@
         }
 
         .skill-title {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--light);
+            border-bottom: 1px solid rgba(108, 31, 209, 0.3);
+            padding-bottom: 0.5rem;
         }
 
-        .skill-description {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
-        .skill-progress {
-            height: 8px;
-            background: rgba(15, 20, 74, 0.5);
-            border-radius: 4px;
-            overflow: hidden;
+        .skill-tag {
+            background: rgba(108, 31, 209, 0.2);
+            color: var(--soft-magenta);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid rgba(108, 31, 209, 0.3);
+            transition: var(--transition);
         }
 
-        .skill-progress-bar {
-            height: 100%;
-            background: linear-gradient(to right, var(--electric-violet), var(--soft-magenta));
-            border-radius: 4px;
-            position: relative;
-            width: 0;
-            transition: width 1.5s ease-in-out;
+        .skill-tag:hover {
+            background: rgba(108, 31, 209, 0.4);
+            transform: translateY(-2px);
         }
 
         /* Projects Section */
         .projects {
             background: linear-gradient(135deg, var(--midnight-blue) 0%, var(--deep-violet) 100%);
+            overflow: hidden;
         }
 
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        .carousel-track {
+            display: flex;
             gap: 2rem;
+            transition: transform 0.5s ease;
+            will-change: transform;
+            padding: 10px 0;
         }
 
         .project-card {
+            flex: 0 0 350px;
             background: rgba(43, 26, 90, 0.6);
             border-radius: var(--border-radius);
             overflow: hidden;
@@ -485,6 +492,7 @@
             height: 200px;
             overflow: hidden;
             position: relative;
+            background: rgba(15, 20, 74, 0.5);
         }
 
         .project-image::after {
@@ -494,7 +502,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, transparent 0%, rgba(43, 26, 90, 0.8) 100%);
+            background: linear-gradient(to bottom, transparent 0%, rgba(43, 26, 90, 0.6) 100%);
         }
 
         .project-image img {
@@ -505,22 +513,59 @@
         }
 
         .project-card:hover .project-image img {
-            transform: scale(1.1);
+            transform: scale(1.05);
+        }
+
+        .project-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--deep-violet), var(--midnight-blue));
+            color: var(--gray);
+            font-size: 3rem;
         }
 
         .project-content {
             padding: 1.5rem;
         }
 
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
         .project-title {
             font-size: 1.3rem;
-            margin-bottom: 0.5rem;
             color: var(--light);
+            flex: 1;
+        }
+
+        .country-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+            background: rgba(108, 31, 209, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(108, 31, 209, 0.3);
+            color: var(--light);
+            white-space: nowrap;
+        }
+
+        .country-flag {
+            font-size: 1.1rem;
         }
 
         .project-description {
             color: var(--gray);
             margin-bottom: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         .project-tech {
@@ -543,6 +588,34 @@
         .project-links {
             display: flex;
             gap: 1rem;
+        }
+
+        /* Carousel Controls */
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .carousel-btn {
+            background: rgba(108, 31, 209, 0.3);
+            border: 2px solid var(--electric-violet);
+            color: var(--light);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            background: var(--electric-violet);
+            transform: scale(1.05);
         }
 
         /* Services Section */
@@ -575,18 +648,6 @@
             border-color: var(--electric-violet);
         }
 
-        .service-badge {
-            position: absolute;
-            top: 20px;
-            right: -30px;
-            background: var(--electric-violet);
-            color: white;
-            padding: 5px 30px;
-            transform: rotate(45deg);
-            font-size: 0.8rem;
-            font-weight: 600;
-        }
-
         .service-icon {
             font-size: 3rem;
             color: var(--soft-magenta);
@@ -599,18 +660,10 @@
             color: var(--light);
         }
 
-        .service-subtitle {
-            font-size: 1.1rem;
-            color: var(--soft-magenta);
+        .service-description {
+            color: var(--gray);
             margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .service-price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: var(--light);
+            font-size: 1.05rem;
         }
 
         .service-features {
@@ -620,7 +673,7 @@
 
         .service-feature {
             padding: 8px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--gray);
         }
 
@@ -748,7 +801,6 @@
         }
 
         .social-link:hover {
-
             background: var(--electric-violet);
             transform: translateY(-3px);
         }
@@ -774,7 +826,6 @@
 
         /* Responsive Styles */
         @media (max-width: 992px) {
-
             .hero-content,
             .about-content,
             .contact-container {
@@ -797,6 +848,10 @@
             .language-selector {
                 top: 80px;
                 right: 15px;
+            }
+
+            .project-card {
+                flex: 0 0 300px;
             }
         }
 
@@ -839,6 +894,14 @@
                 top: 70px;
                 right: 10px;
             }
+
+            .project-card {
+                flex: 0 0 280px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (max-width: 576px) {
@@ -850,7 +913,6 @@
                 font-size: 1.8rem;
             }
 
-            .projects-container,
             .services-container {
                 grid-template-columns: 1fr;
             }
@@ -863,6 +925,14 @@
             .language-selector {
                 top: 65px;
                 right: 10px;
+            }
+
+            .project-card {
+                flex: 0 0 260px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -877,10 +947,8 @@
             <i class="fas fa-chevron-down"></i>
         </button>
         <div class="language-options" id="languageOptions">
-            <div class="language-option" data-lang="en">English</div>
-            <div class="language-option" data-lang="fr">Français</div>
-            <div class="language-option" data-lang="es">Español</div>
-            <div class="language-option" data-lang="de">Deutsch</div>
+            <div class="language-option" data-lang="en">🇬🇧 English</div>
+            <div class="language-option" data-lang="fr">🇫🇷 Français</div>
         </div>
     </div>
 
@@ -888,8 +956,6 @@
     <header id="header">
         <div class="container">
             <nav class="navbar">
-                <!-- Logo and profile image removed as requested -->
-
                 <ul class="nav-menu">
                     <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
                     <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
@@ -911,25 +977,13 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="hero-title fade-in" data-i18n="hero.title">Hi, I'm <span>Francis Dabou</span><br>Frontend
-                        Developer</h1>
-                    <p class="hero-subtitle fade-in" data-i18n="hero.subtitle">Creating beautiful, responsive web
-                        experiences</p>
-                    <p class="hero-description fade-in" data-i18n="hero.description">I specialize in building modern,
-                        user-friendly websites and applications using HTML, CSS, JavaScript, and more. Passionate about
-                        clean code and innovative design.</p>
+                    <h1 class="hero-title fade-in" data-i18n="hero.title">Hi, I'm <span>Francis Dabou</span><br>Software Engineer</h1>
+                    <p class="hero-subtitle fade-in" data-i18n="hero.subtitle">Building digital solutions for businesses, startups, and entrepreneurs.</p>
+                    <p class="hero-description fade-in" data-i18n="hero.description">I create modern websites, web applications, and digital platforms that transform ideas into real products.</p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary fade-in" data-i18n="hero.viewWork">View My Work</a>
                         <a href="#contact" class="btn btn-secondary fade-in" data-i18n="hero.contact">Contact Me</a>
                     </div>
-                </div>
-                <div class="hero-image">
-                    <iframe 
-                        src="https://francisdabou72-hub.github.io/life-dashboard/"
-                        width="100%" 
-                        height="400px" 
-                        style="border:none; border-radius:12px;">
-                    </iframe>
                 </div>
             </div>
         </div>
@@ -941,16 +995,9 @@
             <h2 class="section-title fade-in" data-i18n="about.title">About Me</h2>
             <div class="about-content">
                 <div class="about-text fade-in">
-                    <p data-i18n="about.paragraph1">I'm a passionate frontend developer with expertise in creating
-                        modern, responsive websites and web applications. My journey in web development started with a
-                        curiosity about how websites work, and it has evolved into a career focused on building
-                        exceptional digital experiences.</p>
-                    <p data-i18n="about.paragraph2">I specialize in HTML, CSS, JavaScript, and have experience working
-                        with modern frameworks and tools. I'm constantly learning and adapting to new technologies to
-                        stay at the forefront of web development.</p>
-                    <p data-i18n="about.paragraph3">When I'm not coding, you can find me exploring new design trends,
-                        contributing to open-source projects, or expanding my knowledge in AI and machine learning
-                        applications for web development.</p>
+                    <p data-i18n="about.paragraph1">Software Engineer passionate about building useful digital products. I work on websites, full-stack applications, and technology solutions that solve real-world problems.</p>
+                    <p data-i18n="about.paragraph2">With expertise in modern web technologies and a focus on user-centered design, I create digital experiences that help businesses grow and succeed in the digital economy.</p>
+                    <p data-i18n="about.paragraph3">From concept to deployment, I work closely with clients to understand their needs and deliver solutions that make a real impact. Whether it's a business website, web application, or custom digital solution, I'm committed to excellence and innovation.</p>
                     <a href="#contact" class="btn btn-primary" data-i18n="about.contact">Get In Touch</a>
                 </div>
                 <div class="about-image fade-in">
@@ -967,37 +1014,50 @@
             <div class="skills-container">
                 <div class="skill-card fade-in">
                     <div class="skill-icon">
-                        <i class="fab fa-html5"></i>
+                        <i class="fas fa-code"></i>
                     </div>
-                    <h3 class="skill-title" data-i18n="skills.html.title">HTML5</h3>
-                    <p class="skill-description" data-i18n="skills.html.description">Semantic markup, accessibility, and
-                        modern HTML5 features for creating structured web content.</p>
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="95"></div>
-                    </div>
-                </div>
-
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <i class="fab fa-css3-alt"></i>
-                    </div>
-                    <h3 class="skill-title" data-i18n="skills.css.title">CSS3</h3>
-                    <p class="skill-description" data-i18n="skills.css.description">Responsive design, Flexbox, Grid,
-                        animations, and modern CSS techniques for beautiful interfaces.</p>
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="90"></div>
+                    <h3 class="skill-title" data-i18n="skills.frontend.title">Frontend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
                     </div>
                 </div>
 
                 <div class="skill-card fade-in">
                     <div class="skill-icon">
-                        <i class="fab fa-js"></i>
+                        <i class="fas fa-server"></i>
                     </div>
-                    <h3 class="skill-title" data-i18n="skills.js.title">JavaScript</h3>
-                    <p class="skill-description" data-i18n="skills.js.description">ES6+, DOM manipulation, asynchronous
-                        programming, and modern JavaScript frameworks.</p>
-                    <div class="skill-progress">
-                        <div class="skill-progress-bar" data-width="85"></div>
+                    <h3 class="skill-title" data-i18n="skills.backend.title">Backend</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Express.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="skill-title" data-i18n="skills.tools.title">Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">GitHub</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">Deployment</span>
+                    </div>
+                </div>
+
+                <div class="skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="skill-title" data-i18n="skills.other.title">Other</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Digital Product Development</span>
                     </div>
                 </div>
             </div>
@@ -1008,77 +1068,221 @@
     <section id="projects" class="projects section">
         <div class="container">
             <h2 class="section-title fade-in" data-i18n="projects.title">My Projects</h2>
-            <div class="projects-container">
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="xom.png" alt="XOM Education Project">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title" data-i18n="projects.xom.title">XOM Education</h3>
-                        <p class="project-description" data-i18n="projects.xom.description">A modern educational
-                            platform designed to provide accessible learning resources for students worldwide.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag" data-i18n="projects.responsive">Responsive</span>
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="projectTrack">
+                    <!-- Project 1: XOM Education -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <img src="xom.png" alt="XOM Education">
                         </div>
-                        <div class="project-links">
-                            <a href="https://www.xomeducation.com" class="btn btn-primary"
-                                data-i18n="projects.liveDemo">Live Demo</a>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.xom.title">XOM Education</h3>
+                                <div class="country-badge">
+                                    <span class="country-flag">🇲🇱</span>
+                                    <span>Mali</span>
+                                </div>
+                            </div>
+                            <p class="project-description" data-i18n="projects.xom.description">Digital English learning platform designed to help students improve their English skills through structured lessons, practice, and educational resources.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.xomeducation.com" class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Project 2: COSIA Real Estate -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <img src="diawara.png" alt="COSIA Real Estate">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.cosia.title">COSIA — Real Estate Platform</h3>
+                                <div class="country-badge">
+                                    <span class="country-flag">🇲🇱</span>
+                                    <span>Mali</span>
+                                </div>
+                            </div>
+                            <p class="project-description" data-i18n="projects.cosia.description">Real estate digital platform created to help showcase property services, improve online visibility, and connect clients with real estate solutions.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://immobilierdiawara.site" class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="clar.png" alt="E-commerce Platform">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title" data-i18n="projects.ecommerce.title">E-commerce Platform</h3>
-                        <p class="project-description">E-Commerce Platform Frontend.
-                            A responsive e-commerce platform showcasing
-                            my frontend skills. Features include dynamic
-                            product listings, intuitive navigation,
-                            and a modern UI/UX design. Built with HTML, CSS and JavaScript,
-                            this project highlights my ability
-                            to create engaging and user-friendly interfaces.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS & JavaScript</span>
+                    <!-- Project 3: Précieuse French Académie -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <img src="precieux.png" alt="Précieuse French Académie">
                         </div>
-                        <div class="project-links">
-                            <a href="https://francisdabou72-hub.github.io/claralinke-commercemoderne/"
-                                class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.precieuse.title">Précieuse French Académie</h3>
+                                <div class="country-badge">
+                                    <span class="country-flag">🇳🇬</span>
+                                    <span>Nigeria</span>
+                                </div>
+                            </div>
+                            <p class="project-description" data-i18n="projects.precieuse.description">Professional educational website created for a French teacher to present courses, provide clear course information, and help students discover learning opportunities online.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://gilded-choux-98a1fc.netlify.app" class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Analytics Dashboard -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <div class="project-image-placeholder">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.analytics.title">Analytics Dashboard</h3>
+                                <div class="country-badge">
+                                    <span class="country-flag">🌍</span>
+                                    <span>Global</span>
+                                </div>
+                            </div>
+                            <p class="project-description" data-i18n="projects.analytics.description">Dashboard interface designed for data visualization and management with real-time analytics and customizable widgets.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Chart.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://francisdabou72-hub.github.io/Metricinsight-/" class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Duplicate projects for infinite scroll illusion -->
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <img src="xom.png" alt="XOM Education">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.xom.title">XOM Education</h3>
+                                <div class="country-badge">
+                                    <span class="country-flag">🇲🇱</span>
+                                    <span>Mali</span>
+                                </div>
+                            </div>
+                            <p class="project-description" data-i18n="projects.xom.description">Digital English learning platform designed to help students improve their English skills through structured lessons, practice, and educational resources.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://www.xomeducation.com" class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <img src="clar.png" alt="COSIA Real Estate">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.cosia.title">COSIA — Real Estate Platform</h3>
+                                <div class="country-badge">
+                                    <span class="country-flag">🇲🇱</span>
+                                    <span>Mali</span>
+                                </div>
+                            </div>
+                            <p class="project-description" data-i18n="projects.cosia.description">Real estate digital platform created to help showcase property services, improve online visibility, and connect clients with real estate solutions.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://immobilierdiawara.site" class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <img src="metri.png" alt="Précieuse French Académie">
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.precieuse.title">Précieuse French Académie</h3>
+                                <div class="country-badge">
+                                    <span class="country-flag">🇳🇬</span>
+                                    <span>Nigeria</span>
+                                </div>
+                            </div>
+                            <p class="project-description" data-i18n="projects.precieuse.description">Professional educational website created for a French teacher to present courses, provide clear course information, and help students discover learning opportunities online.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://gilded-choux-98a1fc.netlify.app" class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card fade-in">
+                        <div class="project-image">
+                            <div class="project-image-placeholder">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-title" data-i18n="projects.analytics.title">Analytics Dashboard</h3>
+                                <div class="country-badge">
+                                    <span class="country-flag">🌍</span>
+                                    <span>Global</span>
+                                </div>
+                            </div>
+                            <p class="project-description" data-i18n="projects.analytics.description">Dashboard interface designed for data visualization and management with real-time analytics and customizable widgets.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Chart.js</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://francisdabou72-hub.github.io/Metricinsight-/" class="btn btn-primary" data-i18n="projects.liveDemo">Live Demo</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-card fade-in">
-                    <div class="project-image">
-                        <img src="metri.png" alt="Analytics Dashboard">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title" data-i18n="projects.analytics.title">Analytics Dashboard</h3>
-                        <p class="project-description">
-                            Analytics Dashboard
-                            A comprehensive analytics
-                            dashboard designed to provide insights
-                            into user behavior and platform performance.
-                            Built with HTML, CSS and JavaScript,
-                            it features interactive data visualizations and real-time updates,
-                            demonstrating my ability to create data-driven interfaces.
-                            .</p>
-                        <div class="project-tech">
-                            <span class="tech-tag"> HTMl CSS & JavaScript</span>
-                            <span class="tech-tag" data-i18n="projects.dataViz">Data Visualization</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://francisdabou72-hub.github.io/Metricinsight-/" class="btn btn-primary"
-                                data-i18n="projects.liveDemo">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn" aria-label="Previous projects">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn" id="nextBtn" aria-label="Next projects">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
             </div>
         </div>
     </section>
@@ -1086,109 +1290,75 @@
     <!-- Services Section -->
     <section id="services" class="services section">
         <div class="container">
-            <h2 class="section-title fade-in" data-i18n="services.title">Web Development Services</h2>
+            <h2 class="section-title fade-in" data-i18n="services.title">My Services</h2>
             <div class="services-container">
                 <div class="service-card fade-in">
-                    <div class="service-badge" data-i18n="services.basic.badge">Starter</div>
                     <div class="service-icon">
-                        <i class="fas fa-rocket"></i>
+                        <i class="fas fa-globe"></i>
                     </div>
-                    <h3 class="service-title" data-i18n="services.basic.title">Basic</h3>
-                    <p class="service-subtitle" data-i18n="services.basic.subtitle">Landing page, contact form,
-                        responsive design</p>
-                    <div class="service-price">$199</div>
+                    <h3 class="service-title" data-i18n="services.website.title">Website Development</h3>
+                    <p class="service-description" data-i18n="services.website.description">Professional websites for businesses, entrepreneurs, and personal brands.</p>
                     <div class="service-features">
                         <div class="service-feature">
                             <i class="fas fa-check"></i>
-                            <span data-i18n="services.basic.feature1">Single Landing Page</span>
+                            <span data-i18n="services.website.feature1">Responsive & Mobile-First Design</span>
                         </div>
                         <div class="service-feature">
                             <i class="fas fa-check"></i>
-                            <span data-i18n="services.basic.feature2">Contact Form Integration</span>
+                            <span data-i18n="services.website.feature2">SEO Optimized</span>
                         </div>
                         <div class="service-feature">
                             <i class="fas fa-check"></i>
-                            <span data-i18n="services.basic.feature3">Fully Responsive Design</span>
-                        </div>
-                        <div class="service-feature">
-                            <i class="fas fa-check"></i>
-                            <span data-i18n="services.basic.feature4">Mobile-Optimized</span>
+                            <span data-i18n="services.website.feature3">Fast Loading Performance</span>
                         </div>
                     </div>
-                    <a href="https://www.upwork.com/freelancers/~01180dee097a1f2b97"
-                        class="btn btn-primary" data-i18n="claim">Claim</a>
-                        <p style="text-align: center; font-style: italic; margin-top: 5px;">
-    Secure payment 
-    and project handled via Upwork
-</p>
+                    <a href="#contact" class="btn btn-primary" data-i18n="services.quote">Request a Quote</a>
                 </div>
 
                 <div class="service-card fade-in">
-                    <div class="service-badge" data-i18n="services.standard.badge">Business</div>
                     <div class="service-icon">
-                        <i class="fas fa-briefcase"></i>
+                        <i class="fas fa-cubes"></i>
                     </div>
-                    <h3 class="service-title" data-i18n="services.standard.title">Standard</h3>
-                    <p class="service-subtitle" data-i18n="services.standard.subtitle">Up to 5 pages, SEO setup,
-                        analytics, 1-month support</p>
-                    <div class="service-price">$499</div>
+                    <h3 class="service-title" data-i18n="services.apps.title">Web Applications</h3>
+                    <p class="service-description" data-i18n="services.apps.description">Custom web applications adapted to business needs.</p>
                     <div class="service-features">
                         <div class="service-feature">
                             <i class="fas fa-check"></i>
-                            <span data-i18n="services.standard.feature1">Up to 5 Pages Website</span>
+                            <span data-i18n="services.apps.feature1">Full-Stack Development</span>
                         </div>
                         <div class="service-feature">
                             <i class="fas fa-check"></i>
-                            <span data-i18n="services.standard.feature2">SEO Setup & Optimization</span>
+                            <span data-i18n="services.apps.feature2">Database Integration</span>
                         </div>
                         <div class="service-feature">
                             <i class="fas fa-check"></i>
-                            <span data-i18n="services.standard.feature3">Google Analytics Integration</span>
-                        </div>
-                        <div class="service-feature">
-                            <i class="fas fa-check"></i>
-                            <span data-i18n="services.standard.feature4">1 Month Technical Support</span>
+                            <span data-i18n="services.apps.feature3">Scalable Architecture</span>
                         </div>
                     </div>
-    <a href="https://www.upwork.com/freelancers/~01180dee097a1f2b97" 
-    class="btn btn-primary"data-i18n="Claim">Claim</a>
-<p style="text-align: center; font-style: italic; margin-top: 5px;">
-    Secure payment and project handled via Upwork
-</p>            
-</div>
+                    <a href="#contact" class="btn btn-primary" data-i18n="services.quote">Request a Quote</a>
+                </div>
 
                 <div class="service-card fade-in">
-                    <div class="service-badge" data-i18n="services.premium.badge">Pro</div>
                     <div class="service-icon">
-                        <i class="fas fa-crown"></i>
+                        <i class="fas fa-rocket"></i>
                     </div>
-                    <h3 class="service-title" data-i18n="services.premium.title">Premium</h3>
-                    <p class="service-subtitle" data-i18n="services.premium.subtitle">Unlimited pages, e-commerce, full
-                        branding, 3-month support</p>
-                    <div class="service-price">$999</div>
+                    <h3 class="service-title" data-i18n="services.digital.title">Digital Solutions</h3>
+                    <p class="service-description" data-i18n="services.digital.description">From idea to online product, helping businesses build their digital presence.</p>
                     <div class="service-features">
                         <div class="service-feature">
                             <i class="fas fa-check"></i>
-                            <span data-i18n="services.premium.feature1">Unlimited Pages Website</span>
+                            <span data-i18n="services.digital.feature1">Product Strategy & Planning</span>
                         </div>
                         <div class="service-feature">
                             <i class="fas fa-check"></i>
-                            <span data-i18n="services.premium.feature2">E-commerce Functionality</span>
+                            <span data-i18n="services.digital.feature2">MVP Development</span>
                         </div>
                         <div class="service-feature">
                             <i class="fas fa-check"></i>
-                            <span data-i18n="services.premium.feature3">Complete Branding Package</span>
-                        </div>
-                        <div class="service-feature">
-                            <i class="fas fa-check"></i>
-                            <span data-i18n="services.premium.feature4">3 Months Technical Support</span>
+                            <span data-i18n="services.digital.feature3">Deployment & Maintenance</span>
                         </div>
                     </div>
-                    <a href="https://www.upwork.com/freelancers/~01180dee097a1f2b97"
-                        class="btn btn-primary" data-i18n="Claim">Claim</a>
-                        <p style="text-align: center; font-style: italic; margin-top: 5px;">
-    Secure payment and project handled via Upwork
-</p>
+                    <a href="#contact" class="btn btn-primary" data-i18n="services.quote">Request a Quote</a>
                 </div>
             </div>
         </div>
@@ -1206,8 +1376,7 @@
                         </div>
                         <h3 class="contact-title" data-i18n="contact.email">Email</h3>
                         <p class="contact-detail">francisdabou72@gmail.com</p>
-                        <a href="mailto:francisdabou72@gmail.com" class="btn btn-primary" data-i18n="contact.sendEmail">Send
-                            Email</a>
+                        <a href="mailto:francisdabou72@gmail.com" class="btn btn-primary" data-i18n="contact.sendEmail">Send Email</a>
                     </div>
 
                     <div class="contact-card fade-in">
@@ -1216,31 +1385,43 @@
                         </div>
                         <h3 class="contact-title" data-i18n="contact.whatsapp">WhatsApp</h3>
                         <p class="contact-detail">+223 67454196</p>
-                        <a href="https://wa.me/22367454196" class="btn btn-primary" target="_blank"
-                            data-i18n="contact.message">Message Me</a>
+                        <a href="https://wa.me/22367454196" class="btn btn-primary" target="_blank" data-i18n="contact.message">Message Me</a>
+                    </div>
+
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3 class="contact-title" data-i18n="contact.social">Connect</h3>
+                        <div style="display: flex; gap: 1rem; margin-top: 0.5rem;">
+                            <a href="https://www.linkedin.com/in/francis-dabou/" class="social-link" style="display: inline-flex;">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://francisdabou72-hub.github.io/francisdabou/" class="social-link" style="display: inline-flex;">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.x.com/DabouFranc12525" class="social-link" style="display: inline-flex;">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="contact-form fade-in">
                     <form id="contactForm">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Your Name"
-                                data-i18n-placeholder="contact.form.name" required>
+                            <input type="text" class="form-control" placeholder="Your Name" data-i18n-placeholder="contact.form.name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Your Email"
-                                data-i18n-placeholder="contact.form.email" required>
+                            <input type="email" class="form-control" placeholder="Your Email" data-i18n-placeholder="contact.form.email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Subject"
-                                data-i18n-placeholder="contact.form.subject">
+                            <input type="text" class="form-control" placeholder="Subject" data-i18n-placeholder="contact.form.subject">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Your Message"
-                                data-i18n-placeholder="contact.form.message" required></textarea>
+                            <textarea class="form-control" placeholder="Your Message" data-i18n-placeholder="contact.form.message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary" data-i18n="contact.form.send">Send
-                            Message</button>
+                        <button type="submit" class="btn btn-primary" data-i18n="contact.form.send">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -1267,7 +1448,6 @@
         <div class="copyright">
             <p>&copy; francisdabou.com 2026. All rights reserved.</p>
         </div>
-        </div>
     </footer>
 
     <script>
@@ -1283,67 +1463,56 @@
                 "nav.contact": "Contact",
 
                 // Hero section
-                "hero.title": "Hi, I'm <span>Francis Dabou</span><br>Frontend Developer",
-                "hero.subtitle": "Creating beautiful, responsive web experiences",
-                "hero.description": "I specialize in building modern, user-friendly websites and applications using HTML, CSS, JavaScript, and more. Passionate about clean code and innovative design.",
+                "hero.title": "Hi, I'm <span>Francis Dabou</span><br>Software Engineer",
+                "hero.subtitle": "Building digital solutions for businesses, startups, and entrepreneurs.",
+                "hero.description": "I create modern websites, web applications, and digital platforms that transform ideas into real products.",
                 "hero.viewWork": "View My Work",
                 "hero.contact": "Contact Me",
 
                 // About section
                 "about.title": "About Me",
-                "about.paragraph1": "I'm a passionate frontend developer with expertise in creating modern, responsive websites and web applications. My journey in web development started with a curiosity about how websites work, and it has evolved into a career focused on building exceptional digital experiences.",
-                "about.paragraph2": "I specialize in HTML, CSS, JavaScript, and have experience working with modern frameworks and tools. I'm constantly learning and adapting to new technologies to stay at the forefront of web development.",
-                "about.paragraph3": "When I'm not coding, you can find me exploring new design trends, contributing to open-source projects, or expanding my knowledge in AI and machine learning applications for web development.",
+                "about.paragraph1": "Software Engineer passionate about building useful digital products. I work on websites, full-stack applications, and technology solutions that solve real-world problems.",
+                "about.paragraph2": "With expertise in modern web technologies and a focus on user-centered design, I create digital experiences that help businesses grow and succeed in the digital economy.",
+                "about.paragraph3": "From concept to deployment, I work closely with clients to understand their needs and deliver solutions that make a real impact. Whether it's a business website, web application, or custom digital solution, I'm committed to excellence and innovation.",
                 "about.contact": "Get In Touch",
 
                 // Skills section
                 "skills.title": "My Skills",
-                "skills.html.title": "HTML5",
-                "skills.html.description": "Semantic markup, accessibility, and modern HTML5 features for creating structured web content.",
-                "skills.css.title": "CSS3",
-                "skills.css.description": "Responsive design, Flexbox, Grid, animations, and modern CSS techniques for beautiful interfaces.",
-                "skills.js.title": "JavaScript",
-                "skills.js.description": "ES6+, DOM manipulation, asynchronous programming, and modern JavaScript frameworks.",
+                "skills.frontend.title": "Frontend",
+                "skills.backend.title": "Backend",
+                "skills.tools.title": "Tools",
+                "skills.other.title": "Other",
 
                 // Projects section
                 "projects.title": "My Projects",
                 "projects.xom.title": "XOM Education",
-                "projects.xom.description": "A modern educational platform designed to provide accessible learning resources for students worldwide.",
-                "projects.ecommerce.title": "E-commerce Platform",
-                "projects.ecommerce.description": "A fully responsive e-commerce website with product filtering, cart functionality, and secure checkout.",
+                "projects.xom.description": "Digital English learning platform designed to help students improve their English skills through structured lessons, practice, and educational resources.",
+                "projects.cosia.title": "COSIA — Real Estate Platform",
+                "projects.cosia.description": "Real estate digital platform created to help showcase property services, improve online visibility, and connect clients with real estate solutions.",
+                "projects.precieuse.title": "Précieuse French Académie",
+                "projects.precieuse.description": "Professional educational website created for a French teacher to present courses, provide clear course information, and help students discover learning opportunities online.",
                 "projects.analytics.title": "Analytics Dashboard",
-                "projects.analytics.description": "An interactive dashboard for data visualization with real-time updates and customizable widgets.",
-                "projects.responsive": "Responsive",
-                "projects.api": "API Integration",
-                "projects.payment": "Payment Gateway",
-                "projects.dataViz": "Data Visualization",
+                "projects.analytics.description": "Dashboard interface designed for data visualization and management with real-time analytics and customizable widgets.",
                 "projects.liveDemo": "Live Demo",
-                "projects.code": "Code",
 
                 // Services section
-                "services.title": "Web Development Services",
-                "services.button": "Get in Contact",
-                "services.basic.badge": "Starter",
-                "services.basic.title": "Basic",
-                "services.basic.subtitle": "Landing page, contact form, responsive design",
-                "services.basic.feature1": "Single Landing Page",
-                "services.basic.feature2": "Contact Form Integration",
-                "services.basic.feature3": "Fully Responsive Design",
-                "services.basic.feature4": "Mobile-Optimized",
-                "services.standard.badge": "Business",
-                "services.standard.title": "Standard",
-                "services.standard.subtitle": "Up to 5 pages, SEO setup, analytics, 1-month support",
-                "services.standard.feature1": "Up to 5 Pages Website",
-                "services.standard.feature2": "SEO Setup & Optimization",
-                "services.standard.feature3": "Google Analytics Integration",
-                "services.standard.feature4": "1 Month Technical Support",
-                "services.premium.badge": "Pro",
-                "services.premium.title": "Premium",
-                "services.premium.subtitle": "Unlimited pages, e-commerce, full branding, 3-month support",
-                "services.premium.feature1": "Unlimited Pages Website",
-                "services.premium.feature2": "E-commerce Functionality",
-                "services.premium.feature3": "Complete Branding Package",
-                "services.premium.feature4": "3 Months Technical Support",
+                "services.title": "My Services",
+                "services.website.title": "Website Development",
+                "services.website.description": "Professional websites for businesses, entrepreneurs, and personal brands.",
+                "services.website.feature1": "Responsive & Mobile-First Design",
+                "services.website.feature2": "SEO Optimized",
+                "services.website.feature3": "Fast Loading Performance",
+                "services.apps.title": "Web Applications",
+                "services.apps.description": "Custom web applications adapted to business needs.",
+                "services.apps.feature1": "Full-Stack Development",
+                "services.apps.feature2": "Database Integration",
+                "services.apps.feature3": "Scalable Architecture",
+                "services.digital.title": "Digital Solutions",
+                "services.digital.description": "From idea to online product, helping businesses build their digital presence.",
+                "services.digital.feature1": "Product Strategy & Planning",
+                "services.digital.feature2": "MVP Development",
+                "services.digital.feature3": "Deployment & Maintenance",
+                "services.quote": "Request a Quote",
 
                 // Contact section
                 "contact.title": "Get In Touch",
@@ -1351,6 +1520,7 @@
                 "contact.sendEmail": "Send Email",
                 "contact.whatsapp": "WhatsApp",
                 "contact.message": "Message Me",
+                "contact.social": "Connect",
                 "contact.form.name": "Your Name",
                 "contact.form.email": "Your Email",
                 "contact.form.subject": "Subject",
@@ -1367,276 +1537,90 @@
                 "nav.contact": "Contact",
 
                 // Hero section
-                "hero.title": "Bonjour, je suis <span>Francis Dabou</span><br>Développeur Frontend",
-                "hero.subtitle": "Création d'expériences web magnifiques et responsives",
-                "hero.description": "Je me spécialise dans la création de sites web et d'applications modernes et conviviaux utilisant HTML, CSS, JavaScript et plus encore. Passionné par le code propre et le design innovant.",
+                "hero.title": "Bonjour, je suis <span>Francis Dabou</span><br>Ingénieur Logiciel",
+                "hero.subtitle": "Création de solutions numériques pour les entreprises, startups et entrepreneurs.",
+                "hero.description": "Je crée des sites web modernes, des applications web et des plateformes numériques qui transforment les idées en produits réels.",
                 "hero.viewWork": "Voir mon travail",
                 "hero.contact": "Me contacter",
 
                 // About section
                 "about.title": "À propos de moi",
-                "about.paragraph1": "Je suis un développeur frontend passionné avec une expertise dans la création de sites web et d'applications web modernes et responsives. Mon parcours dans le développement web a commencé par une curiosité sur le fonctionnement des sites web, et a évolué vers une carrière axée sur la création d'expériences digitales exceptionnelles.",
-                "about.paragraph2": "Je me spécialise en HTML, CSS, JavaScript et j'ai de l'expérience avec les frameworks et outils modernes. J'apprends et m'adapte constamment aux nouvelles technologies pour rester à la pointe du développement web.",
-                "about.paragraph3": "Quand je ne code pas, vous pouvez me trouver en train d'explorer les nouvelles tendances en design, de contribuer à des projets open-source, ou d'approfondir mes connaissances en IA et en apprentissage automatique pour le développement web.",
-                "about.contact": "Entrer en contact",
+                "about.paragraph1": "Ingénieur logiciel passionné par la création de produits numériques utiles. Je travaille sur des sites web, des applications full-stack et des solutions technologiques qui résolvent des problèmes concrets.",
+                "about.paragraph2": "Avec une expertise dans les technologies web modernes et une approche centrée sur l'utilisateur, je crée des expériences numériques qui aident les entreprises à se développer et à réussir dans l'économie numérique.",
+                "about.paragraph3": "De la conception au déploiement, je travaille en étroite collaboration avec les clients pour comprendre leurs besoins et fournir des solutions qui ont un réel impact. Que ce soit un site web d'entreprise, une application web ou une solution numérique personnalisée, je suis engagé pour l'excellence et l'innovation.",
+                "about.contact": "Me contacter",
 
                 // Skills section
                 "skills.title": "Mes compétences",
-                "skills.html.title": "HTML5",
-                "skills.html.description": "Balisage sémantique, accessibilité et fonctionnalités HTML5 modernes pour créer du contenu web structuré.",
-                "skills.css.title": "CSS3",
-                "skills.css.description": "Design responsive, Flexbox, Grid, animations et techniques CSS modernes pour des interfaces magnifiques.",
-                "skills.js.title": "JavaScript",
-                "skills.js.description": "ES6+, manipulation du DOM, programmation asynchrone et frameworks JavaScript modernes.",
+                "skills.frontend.title": "Frontend",
+                "skills.backend.title": "Backend",
+                "skills.tools.title": "Outils",
+                "skills.other.title": "Autres",
 
                 // Projects section
                 "projects.title": "Mes projets",
                 "projects.xom.title": "XOM Education",
-                "projects.xom.description": "Une plateforme éducative moderne conçue pour fournir des ressources d'apprentissage accessibles aux étudiants du monde entier.",
-                "projects.ecommerce.title": "Plateforme E-commerce",
-                "projects.ecommerce.description": "Un site e-commerce entièrement responsive avec filtrage de produits, fonctionnalité de panier et paiement sécurisé.",
+                "projects.xom.description": "Plateforme d'apprentissage d'anglais numérique conçue pour aider les étudiants à améliorer leurs compétences en anglais à travers des leçons structurées, des exercices et des ressources éducatives.",
+                "projects.cosia.title": "COSIA — Plateforme Immobilière",
+                "projects.cosia.description": "Plateforme numérique immobilière créée pour aider à présenter les services immobiliers, améliorer la visibilité en ligne et connecter les clients avec des solutions immobilières.",
+                "projects.precieuse.title": "Précieuse French Académie",
+                "projects.precieuse.description": "Site web éducatif professionnel créé pour un professeur de français afin de présenter des cours, fournir des informations claires sur les cours et aider les étudiants à découvrir des opportunités d'apprentissage en ligne.",
                 "projects.analytics.title": "Tableau de bord Analytics",
-                "projects.analytics.description": "Un tableau de bord interactif pour la visualisation de données avec mises à jour en temps réel et widgets personnalisables.",
-                "projects.responsive": "Responsive",
-                "projects.api": "Intégration API",
-                "projects.payment": "Passerelle de paiement",
-                "projects.dataViz": "Visualisation de données",
+                "projects.analytics.description": "Interface de tableau de bord conçue pour la visualisation et la gestion des données avec des analyses en temps réel et des widgets personnalisables.",
                 "projects.liveDemo": "Démo en direct",
-                "projects.code": "Code",
 
                 // Services section
-                "services.title": "Services de Développement Web",
-                "services.button": "Entrer en contact",
-                "services.basic.badge": "Débutant",
-                "services.basic.title": "Basique",
-                "services.basic.subtitle": "Page de destination, formulaire de contact, design responsive",
-                "services.basic.feature1": "Page de Destination Unique",
-                "services.basic.feature2": "Intégration de Formulaire de Contact",
-                "services.basic.feature3": "Design Entièrement Responsive",
-                "services.basic.feature4": "Optimisé pour Mobile",
-                "services.standard.badge": "Entreprise",
-                "services.standard.title": "Standard",
-                "services.standard.subtitle": "Jusqu'à 5 pages, configuration SEO, analytics, 1 mois de support",
-                "services.standard.feature1": "Site Web Jusqu'à 5 Pages",
-                "services.standard.feature2": "Configuration et Optimisation SEO",
-                "services.standard.feature3": "Intégration Google Analytics",
-                "services.standard.feature4": "1 Mois de Support Technique",
-                "services.premium.badge": "Pro",
-                "services.premium.title": "Premium",
-                "services.premium.subtitle": "Pages illimitées, e-commerce, branding complet, 3 mois de support",
-                "services.premium.feature1": "Site Web à Pages Illimitées",
-                "services.premium.feature2": "Fonctionnalités E-commerce",
-                "services.premium.feature3": "Package de Branding Complet",
-                "services.premium.feature4": "3 Mois de Support Technique",
+                "services.title": "Mes services",
+                "services.website.title": "Développement de sites web",
+                "services.website.description": "Sites web professionnels pour les entreprises, entrepreneurs et marques personnelles.",
+                "services.website.feature1": "Design responsive et mobile-first",
+                "services.website.feature2": "Optimisé pour le référencement",
+                "services.website.feature3": "Performance de chargement rapide",
+                "services.apps.title": "Applications web",
+                "services.apps.description": "Applications web personnalisées adaptées aux besoins des entreprises.",
+                "services.apps.feature1": "Développement full-stack",
+                "services.apps.feature2": "Intégration de base de données",
+                "services.apps.feature3": "Architecture évolutive",
+                "services.digital.title": "Solutions numériques",
+                "services.digital.description": "De l'idée au produit en ligne, en aidant les entreprises à construire leur présence numérique.",
+                "services.digital.feature1": "Stratégie et planification de produit",
+                "services.digital.feature2": "Développement MVP",
+                "services.digital.feature3": "Déploiement et maintenance",
+                "services.quote": "Demander un devis",
 
                 // Contact section
-                "contact.title": "Entrer en contact",
+                "contact.title": "Me contacter",
                 "contact.email": "Email",
                 "contact.sendEmail": "Envoyer un email",
                 "contact.whatsapp": "WhatsApp",
-                "contact.message": "Me contacter",
+                "contact.message": "M'envoyer un message",
+                "contact.social": "Se connecter",
                 "contact.form.name": "Votre nom",
                 "contact.form.email": "Votre email",
                 "contact.form.subject": "Sujet",
                 "contact.form.message": "Votre message",
                 "contact.form.send": "Envoyer le message"
-            },
-            es: {
-                // Navigation
-                "nav.home": "Inicio",
-                "nav.about": "Acerca de",
-                "nav.skills": "Habilidades",
-                "nav.projects": "Proyectos",
-                "nav.services": "Servicios",
-                "nav.contact": "Contacto",
-
-                // Hero section
-                "hero.title": "Hola, soy <span>Francis Dabou</span><br>Desarrollador Frontend",
-                "hero.subtitle": "Creando experiencias web hermosas y responsivas",
-                "hero.description": "Me especializo en construir sitios web y aplicaciones modernas y fáciles de usar utilizando HTML, CSS, JavaScript y más. Apasionado por el código limpio y el diseño innovador.",
-                "hero.viewWork": "Ver mi trabajo",
-                "hero.contact": "Contactarme",
-
-                // About section
-                "about.title": "Acerca de mí",
-                "about.paragraph1": "Soy un desarrollador frontend apasionado con experiencia en la creación de sitios web y aplicaciones web modernas y responsivas. Mi viaje en el desarrollo web comenzó con la curiosidad sobre cómo funcionan los sitios web, y ha evolucionado hacia una carrera centrada en la construcción de experiencias digitales excepcionales.",
-                "about.paragraph2": "Me especializo en HTML, CSS, JavaScript y tengo experiencia trabajando con frameworks y herramientas modernas. Constantemente estoy aprendiendo y adaptándome a nuevas tecnologías para mantenerme a la vanguardia del desarrollo web.",
-                "about.paragraph3": "Cuando no estoy programando, puedes encontrarme explorando nuevas tendencias de diseño, contribuyendo a proyectos de código abierto o expandiendo mis conocimientos en IA y aprendizaje automático para el desarrollo web.",
-                "about.contact": "Ponerse en contacto",
-
-                // Skills section
-                "skills.title": "Mis habilidades",
-                "skills.html.title": "HTML5",
-                "skills.html.description": "Marcado semántico, accesibilidad y características modernas de HTML5 para crear contenido web estructurado.",
-                "skills.css.title": "CSS3",
-                "skills.css.description": "Diseño responsive, Flexbox, Grid, animaciones y técnicas modernas de CSS para interfaces hermosas.",
-                "skills.js.title": "JavaScript",
-                "skills.js.description": "ES6+, manipulación del DOM, programación asíncrona y frameworks modernos de JavaScript.",
-
-                // Projects section
-                "projects.title": "Mis proyectos",
-                "projects.xom.title": "XOM Education",
-                "projects.xom.description": "Una plataforma educativa moderna diseñada para proporcionar recursos de aprendizaje accesibles para estudiantes de todo el mundo.",
-                "projects.ecommerce.title": "Plataforma E-commerce",
-                "projects.ecommerce.description": "Un sitio web de comercio electrónico completamente responsive con filtrado de productos, funcionalidad de carrito y pago seguro.",
-                "projects.analytics.title": "Panel de Analytics",
-                "projects.analytics.description": "Un panel interactivo para visualización de datos con actualizaciones en tiempo real y widgets personalizables.",
-                "projects.responsive": "Responsive",
-                "projects.api": "Integración API",
-                "projects.payment": "Pasarela de pago",
-                "projects.dataViz": "Visualización de datos",
-                "projects.liveDemo": "Demo en vivo",
-                "projects.code": "Código",
-
-                // Services section
-                "services.title": "Servicios de Desarrollo Web",
-                "services.button": "Ponerse en contacto",
-                "services.basic.badge": "Inicial",
-                "services.basic.title": "Básico",
-                "services.basic.subtitle": "Página de destino, formulario de contacto, diseño responsive",
-                "services.basic.feature1": "Página de Destino Única",
-                "services.basic.feature2": "Integración de Formulario de Contacto",
-                "services.basic.feature3": "Diseño Completamente Responsive",
-                "services.basic.feature4": "Optimizado para Móvil",
-                "services.standard.badge": "Empresa",
-                "services.standard.title": "Estándar",
-                "services.standard.subtitle": "Hasta 5 páginas, configuración SEO, analytics, 1 mes de soporte",
-                "services.standard.feature1": "Sitio Web de Hasta 5 Páginas",
-                "services.standard.feature2": "Configuración y Optimización SEO",
-                "services.standard.feature3": "Integración Google Analytics",
-                "services.standard.feature4": "1 Mes de Soporte Técnico",
-                "services.premium.badge": "Pro",
-                "services.premium.title": "Premium",
-                "services.premium.subtitle": "Páginas ilimitadas, e-commerce, branding completo, 3 meses de soporte",
-                "services.premium.feature1": "Sitio Web de Páginas Ilimitadas",
-                "services.premium.feature2": "Funcionalidad E-commerce",
-                "services.premium.feature3": "Paquete de Branding Completo",
-                "services.premium.feature4": "3 Meses de Soporte Técnico",
-
-                // Contact section
-                "contact.title": "Ponerse en contacto",
-                "contact.email": "Email",
-                "contact.sendEmail": "Enviar email",
-                "contact.whatsapp": "WhatsApp",
-                "contact.message": "Enviar mensaje",
-                "contact.form.name": "Tu nombre",
-                "contact.form.email": "Tu email",
-                "contact.form.subject": "Asunto",
-                "contact.form.message": "Tu mensaje",
-                "contact.form.send": "Enviar mensaje"
-            },
-            de: {
-                // Navigation
-                "nav.home": "Startseite",
-                "nav.about": "Über mich",
-                "nav.skills": "Fähigkeiten",
-                "nav.projects": "Projekte",
-                "nav.services": "Dienstleistungen",
-                "nav.contact": "Kontakt",
-
-                // Hero section
-                "hero.title": "Hallo, ich bin <span>Francis Dabou</span><br>Frontend Entwickler",
-                "hero.subtitle": "Erstellung schöner, responsiver Webeerlebnisse",
-                "hero.description": "Ich spezialisiere mich auf den Bau moderner, benutzerfreundlicher Websites und Anwendungen mit HTML, CSS, JavaScript und mehr. Leidenschaftlich für sauberen Code und innovatives Design.",
-                "hero.viewWork": "Meine Arbeit ansehen",
-                "hero.contact": "Kontaktieren Sie mich",
-
-                // About section
-                "about.title": "Über mich",
-                "about.paragraph1": "Ich bin ein leidenschaftlicher Frontend-Entwickler mit Expertise in der Erstellung moderner, responsiver Websites und Webanwendungen. Meine Reise in der Webentwicklung begann mit einer Neugier darauf, wie Websites funktionieren, und hat sich zu einer Karriere entwickelt, die sich auf den Aufbau außergewöhnlicher digitaler Erlebnisse konzentriert.",
-                "about.paragraph2": "Ich spezialisiere mich auf HTML, CSS, JavaScript und habe Erfahrung mit modernen Frameworks und Tools. Ich lerne und passe mich ständig neuen Technologien an, um an der Spitze der Webentwicklung zu bleiben.",
-                "about.paragraph3": "Wenn ich nicht programmiere, findest du mich dabei, neue Designtrends zu erkunden, zu Open-Source-Projekten beizutragen oder mein Wissen in KI und maschinellem Lernen für die Webentwicklung zu erweitern.",
-                "about.contact": "Kontakt aufnehmen",
-
-                // Skills section
-                "skills.title": "Meine Fähigkeiten",
-                "skills.html.title": "HTML5",
-                "skills.html.description": "Semantisches Markup, Barrierefreiheit und moderne HTML5-Funktionen zur Erstellung strukturierter Webinhalte.",
-                "skills.css.title": "CSS3",
-                "skills.css.description": "Responsives Design, Flexbox, Grid, Animationen und moderne CSS-Techniken für schöne Schnittstellen.",
-                "skills.js.title": "JavaScript",
-                "skills.js.description": "ES6+, DOM-Manipulation, asynchrone Programmierung und moderne JavaScript-Frameworks.",
-
-                // Projects section
-                "projects.title": "Meine Projekte",
-                "projects.xom.title": "XOM Education",
-                "projects.xom.description": "Eine moderne Bildungsplattform, die zugängliche Lernressourcen für Studenten weltweit bereitstellt.",
-                "projects.ecommerce.title": "E-Commerce-Plattform",
-                "projects.ecommerce.description": "Eine vollständig responsive E-Commerce-Website mit Produktfiltering, Warenkorbfunktionalität und sicherem Checkout.",
-                "projects.analytics.title": "Analytics-Dashboard",
-                "projects.analytics.description": "Ein interaktives Dashboard zur Datenvisualisierung mit Echtzeit-Updates und anpassbaren Widgets.",
-                "projects.responsive": "Responsive",
-                "projects.api": "API-Integration",
-                "projects.payment": "Zahlungs-Gateway",
-                "projects.dataViz": "Datenvisualisierung",
-                "projects.liveDemo": "Live-Demo",
-                "projects.code": "Code",
-
-                // Services section
-                "services.title": "Webentwicklungsdienstleistungen",
-                "services.button": "Kontakt aufnehmen",
-                "services.basic.badge": "Starter",
-                "services.basic.title": "Basic",
-                "services.basic.subtitle": "Landingpage, Kontaktformular, responsives Design",
-                "services.basic.feature1": "Einzelne Landingpage",
-                "services.basic.feature2": "Kontaktformular-Integration",
-                "services.basic.feature3": "Vollständig responsives Design",
-                "services.basic.feature4": "Mobil optimiert",
-                "services.standard.badge": "Business",
-                "services.standard.title": "Standard",
-                "services.standard.subtitle": "Bis zu 5 Seiten, SEO-Einrichtung, Analytics, 1 Monat Support",
-                "services.standard.feature1": "Website mit bis zu 5 Seiten",
-                "services.standard.feature2": "SEO-Einrichtung & Optimierung",
-                "services.standard.feature3": "Google Analytics Integration",
-                "services.standard.feature4": "1 Monat technischer Support",
-                "services.premium.badge": "Pro",
-                "services.premium.title": "Premium",
-                "services.premium.subtitle": "Unbegrenzte Seiten, E-Commerce, vollständiges Branding, 3 Monate Support",
-                "services.premium.feature1": "Website mit unbegrenzten Seiten",
-                "services.premium.feature2": "E-Commerce-Funktionalität",
-                "services.premium.feature3": "Vollständiges Branding-Paket",
-                "services.premium.feature4": "3 Monate technischer Support",
-
-                // Contact section
-                "contact.title": "Kontakt aufnehmen",
-                "contact.email": "E-Mail",
-                "contact.sendEmail": "E-Mail senden",
-                "contact.whatsapp": "WhatsApp",
-                "contact.message": "Nachricht senden",
-                "contact.form.name": "Ihr Name",
-                "contact.form.email": "Ihre E-Mail",
-                "contact.form.subject": "Betreff",
-                "contact.form.message": "Ihre Nachricht",
-                "contact.form.send": "Nachricht senden"
             }
         };
 
         // Auto-detect user language
         function detectUserLanguage() {
             const browserLang = navigator.language || navigator.userLanguage;
-            const langCode = browserLang.split('-')[0]; // Get primary language code
-
-            // Check if we support this language
+            const langCode = browserLang.split('-')[0];
             if (translations[langCode]) {
                 return langCode;
             }
-
-            // Default to English if language not supported
             return 'en';
         }
 
         // Set language function
         function setLanguage(lang) {
-            // Update HTML lang attribute
             document.documentElement.lang = lang;
-
-            // Update current language display
             document.getElementById('currentLanguage').textContent = lang.toUpperCase();
 
-            // Update all translatable elements
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
-                if (translations[lang][key]) {
+                if (translations[lang] && translations[lang][key]) {
                     if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
                         element.placeholder = translations[lang][key];
                     } else {
@@ -1645,15 +1629,13 @@
                 }
             });
 
-            // Update placeholder texts
             document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
                 const key = element.getAttribute('data-i18n-placeholder');
-                if (translations[lang][key]) {
+                if (translations[lang] && translations[lang][key]) {
                     element.placeholder = translations[lang][key];
                 }
             });
 
-            // Save language preference
             localStorage.setItem('preferredLanguage', lang);
         }
 
@@ -1665,7 +1647,7 @@
         }
 
         // Header scroll effect
-        window.addEventListener('scroll', function () {
+        window.addEventListener('scroll', function() {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
                 header.classList.add('header-scrolled');
@@ -1677,7 +1659,7 @@
         // Fade in animation on scroll
         const fadeElements = document.querySelectorAll('.fade-in');
 
-        const appearOnScroll = new IntersectionObserver(function (entries, appearOnScroll) {
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
             entries.forEach(entry => {
                 if (!entry.isIntersecting) return;
                 entry.target.classList.add('appear');
@@ -1689,35 +1671,18 @@
             appearOnScroll.observe(element);
         });
 
-        // Animate skill progress bars
-        const progressBars = document.querySelectorAll('.skill-progress-bar');
-
-        const animateProgressBars = new IntersectionObserver(function (entries, animateProgressBars) {
-            entries.forEach(entry => {
-                if (!entry.isIntersecting) return;
-                const width = entry.target.getAttribute('data-width');
-                entry.target.style.width = width + '%';
-                animateProgressBars.unobserve(entry.target);
-            });
-        }, { threshold: 0.5 });
-
-        progressBars.forEach(bar => {
-            animateProgressBars.observe(bar);
-        });
-
         // Mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
 
-        hamburger.addEventListener('click', function () {
+        hamburger.addEventListener('click', function() {
             navMenu.classList.toggle('active');
             hamburger.innerHTML = navMenu.classList.contains('active') ?
                 '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
 
-        // Close mobile menu when clicking on a link
         document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function () {
+            link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
                 hamburger.innerHTML = '<i class="fas fa-bars"></i>';
             });
@@ -1727,41 +1692,159 @@
         const languageBtn = document.getElementById('languageBtn');
         const languageOptions = document.getElementById('languageOptions');
 
-        languageBtn.addEventListener('click', function () {
+        languageBtn.addEventListener('click', function() {
             languageOptions.classList.toggle('show');
         });
 
-        // Language selection
         document.querySelectorAll('.language-option').forEach(option => {
-            option.addEventListener('click', function () {
+            option.addEventListener('click', function() {
                 const selectedLang = this.getAttribute('data-lang');
                 setLanguage(selectedLang);
                 languageOptions.classList.remove('show');
             });
         });
 
-        // Close language selector when clicking outside
-        document.addEventListener('click', function (event) {
+        document.addEventListener('click', function(event) {
             if (!languageBtn.contains(event.target) && !languageOptions.contains(event.target)) {
                 languageOptions.classList.remove('show');
             }
         });
 
         // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! I will get back to you soon.');
             this.reset();
         });
 
+        // Carousel Functionality
+        const track = document.getElementById('projectTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentIndex = 0;
+        let cardWidth = 350;
+        let gap = 32;
+        let visibleCards = 3;
+
+        function updateCarousel() {
+            const totalCards = document.querySelectorAll('.project-card').length;
+            const maxIndex = Math.max(0, totalCards - visibleCards);
+            if (currentIndex > maxIndex) currentIndex = 0;
+            if (currentIndex < 0) currentIndex = maxIndex;
+
+            const offset = -currentIndex * (cardWidth + gap);
+            track.style.transform = `translateX(${offset}px)`;
+        }
+
+        function updateDimensions() {
+            const wrapper = document.querySelector('.carousel-wrapper');
+            const wrapperWidth = wrapper.clientWidth - 40;
+
+            if (wrapperWidth < 600) {
+                visibleCards = 1;
+                cardWidth = wrapperWidth - 20;
+            } else if (wrapperWidth < 900) {
+                visibleCards = 2;
+                cardWidth = (wrapperWidth - gap) / 2 - 10;
+            } else {
+                visibleCards = 3;
+                cardWidth = (wrapperWidth - gap * 2) / 3 - 10;
+            }
+
+            // Update card styles
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.style.flex = `0 0 ${cardWidth}px`;
+            });
+
+            updateCarousel();
+        }
+
+        nextBtn.addEventListener('click', function() {
+            const totalCards = document.querySelectorAll('.project-card').length;
+            if (currentIndex < totalCards - visibleCards) {
+                currentIndex++;
+            } else {
+                currentIndex = 0;
+            }
+            updateCarousel();
+        });
+
+        prevBtn.addEventListener('click', function() {
+            const totalCards = document.querySelectorAll('.project-card').length;
+            if (currentIndex > 0) {
+                currentIndex--;
+            } else {
+                currentIndex = totalCards - visibleCards;
+            }
+            updateCarousel();
+        });
+
+        // Auto-play
+        let autoPlayInterval;
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(() => {
+                const totalCards = document.querySelectorAll('.project-card').length;
+                if (currentIndex < totalCards - visibleCards) {
+                    currentIndex++;
+                } else {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            }, 4000);
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // Pause on hover
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        carouselWrapper.addEventListener('mouseenter', stopAutoPlay);
+        carouselWrapper.addEventListener('mouseleave', startAutoPlay);
+
+        // Initialize
+        window.addEventListener('load', function() {
+            updateDimensions();
+            startAutoPlay();
+        });
+
+        window.addEventListener('resize', function() {
+            updateDimensions();
+        });
+
         // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             initLanguage();
         });
     </script>
     <script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="HwXoipNyQCrzTyYYsNS4Z";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+        (function() {
+            if (!window.chatbase || window.chatbase("getState") !== "initialized") {
+                window.chatbase = (...arguments) => {
+                    if (!window.chatbase.q) { window.chatbase.q = [] }
+                    window.chatbase.q.push(arguments)
+                };
+                window.chatbase = new Proxy(window.chatbase, {
+                    get(target, prop) {
+                        if (prop === "q") { return target.q }
+                        return (...args) => target(prop, ...args)
+                    }
+                })
+            }
+            const onLoad = function() {
+                const script = document.createElement("script");
+                script.src = "https://www.chatbase.co/embed.min.js";
+                script.id = "HwXoipNyQCrzTyYYsNS4Z";
+                script.domain = "www.chatbase.co";
+                document.body.appendChild(script)
+            };
+            if (document.readyState === "complete") {
+                onLoad()
+            } else {
+                window.addEventListener("load", onLoad)
+            }
+        })();
+    </script>
 </body>
-
-</html> 
+</html>
